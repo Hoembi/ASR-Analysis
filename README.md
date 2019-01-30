@@ -45,3 +45,18 @@ the script asr-pipeline_iqtree.py can be used to process data calculated with th
     - file with all posterior probabilities, one per line (can be used to plot posterior probabilites on structure) for trimmed sequence
 
 The pdf files with plots will be named according to node as well as average posterior probability, rounded to two decimals.
+
+5. Plotting the posterior probabilities on the structure:
+    Run the ```loadBfacts_recolor.py``` script in pymol. This will add the command loadBfacts_recolor to PYMOL. The script is an adapted version from Pietro Gatti-Lafranconi's script (Gatti-Lafranconi, P.. Pymol script: loadBfacts.py. (2014). doi:10.6084/m9.figshare.1176991.v1).
+    Usage of the script:
+```
+    Replaces B-factors with a list of values contained in a plain txt file
+
+    usage: loadBnoputty mol, [startaa, [source, [visual]]]
+
+    mol = any object selection (within one single object though)
+    startaa = number of first amino acid in 'new B-factors' file (default=1)
+    source = name of the file containing new B-factor values (default=newBfactors.txt)
+    visual = redraws and colors the structre and displays bar with min/max values (default=Y)
+    """
+```
