@@ -16,7 +16,7 @@ the script asr-pipeline_iqtree.py can be used to process data calculated with th
 # Detailled instructions on script usage
 ### PAML-DATASET
 
-#### Preparation
+### Preparation
 1. Make sure you have the following information handy:
     - initial tree with internal node numbers (can be extracted from PAML rst file on line 15: ```head -n 15 rst | tail -n 1 >> tree_with_nodes.tree```)
     - length of the full alignment used for PAML calculations (# of positions)
