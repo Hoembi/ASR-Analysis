@@ -21,7 +21,7 @@ the script asr-pipeline_iqtree.py can be used to process data calculated with th
     - initial tree with internal node numbers (can be extracted from PAML rst file on line 15: ```head -n 15 rst | tail -n 1 >> tree_with_nodes.tree```)
     - length of the full alignment used for PAML calculations (# of positions)
 
-2. run the script to generate full length fasta sequence for the desired node with the following command:
+2. Run the script to generate full length fasta sequence for the desired node with the following command:
     ```
     ./asr-pipeline_paml.py -r <rst_file>  -n <node_number> -a <alignment_length>
     ```
@@ -30,9 +30,9 @@ the script asr-pipeline_iqtree.py can be used to process data calculated with th
     -  plots with posterior probability per reside as well as histogram of posterior probabilites
     -  file with all posterior probabilities, one per line (can be used to plot posterior probabilites on structure)
 
-3. use the generated full length sequence and determine which areas to cut (based on child and parent cladse). Store positions to cut in the following format:  per line two numbers separated by comma. The left number is included and right number exluded from trim (e.g. 1,50 will cut residue 1 through 49)
+3. Use the generated full length sequence and determine which areas to cut (based on child and parent cladse). Store positions to cut in the following format:  per line two numbers separated by comma. The left number is included and right number exluded from trim (e.g. 1,50 will cut residue 1 through 49)
 
-4. re-run script, this time specifying the file with the positions to be trimmed:
+4. Re-run script, this time specifying the file with the positions to be trimmed:
     ```
     ./asr-pipeline_paml.py -r <rst_file>  -n <node_number> -a <alignment_length> -c <file_with_pos_to_cut>
     ```
