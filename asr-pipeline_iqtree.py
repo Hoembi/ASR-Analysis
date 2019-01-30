@@ -147,9 +147,9 @@ def plot_statistics(full_statistics, cut_statistics, node_number):
     sub1.set_ylabel("count")
     sub1 = sb.distplot(ys_full, kde=False, bins=25)
     fig1.savefig(
-        "Node"
+        "ANC-N"
         + str(node_number)
-        + "_full_"
+        + "_full_length_"
         + str(round(numpy.mean(ys_full), 2))
         + ".pdf",
         transparent=True,
@@ -172,7 +172,7 @@ def plot_statistics(full_statistics, cut_statistics, node_number):
         sub2.set_ylabel("count")
         sub2 = sb.distplot(ys_cut, kde=False, bins=25)
         fig2.savefig(
-            "Node"
+            "ANC-N"
             + str(node_number)
             + "_trimmed_"
             + str(round(numpy.mean(ys_cut), 2))
