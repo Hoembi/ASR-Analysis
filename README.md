@@ -52,7 +52,7 @@ The pdf files with plots will be named according to node as well as average post
 ```
     Replaces B-factors with a list of values contained in a plain txt file
 
-    usage: loadBnoputty mol, [startaa, [source, [visual]]]
+    usage: loadBfactor mol, [startaa, [source, [visual]]]
 
     mol = any object selection (within one single object though)
     startaa = number of first amino acid in 'new B-factors' file (default=1)
