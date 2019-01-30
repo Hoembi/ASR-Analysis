@@ -1,6 +1,6 @@
 from pymol import cmd, stored, math
 
-def loadBnoputty (mol,startaa=1,source="newBfactors.txt", visual="Y"):
+def loadBfactor (mol,startaa=1,source="newBfactors.txt", visual="Y"):
 	"""
 	Replaces B-factors with a list of values contained in a plain txt file
 
@@ -27,4 +27,4 @@ def loadBnoputty (mol,startaa=1,source="newBfactors.txt", visual="Y"):
 		cmd.ramp_new("count", obj, [min(bfacts), max(bfacts)], "rainbow")
 		cmd.recolor()
 
-cmd.extend("loadBnoputty_recolor", loadBnoputty);
+cmd.extend("loadBnoputty_recolor", loadBfactor);
