@@ -22,7 +22,7 @@ the script asr-pipeline_iqtree.py can be used to process data calculated with th
     - length of the full alignment used for PAML calculations (# of positions)
 
 2. run the script to generate full length fasta sequence for the desired node with the following command:
-    '''
+    ```
     ./asr-pipeline_paml.py -r <rst_file>  -n <node_number> -a <alignment_length>
     ```
     This will generate three files:
