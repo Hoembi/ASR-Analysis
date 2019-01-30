@@ -58,5 +58,4 @@ The pdf files with plots will be named according to node as well as average post
     startaa = number of first amino acid in 'new B-factors' file (default=1)
     source = name of the file containing new B-factor values (default=newBfactors.txt)
     visual = redraws and colors the structre and displays bar with min/max values (default=Y)
-    """
 ```
