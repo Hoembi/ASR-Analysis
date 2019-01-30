@@ -243,7 +243,7 @@ def main():
         "**                                probabilities (PP). Gives sequences for ancestor in fasta file, plots with PP and          ** \n"
         "**                                B-factor file that can be used to plot PP on the structure.                                **\n"
         "*******************************************************************************************************************************\n\n"
-        "      Usage: ./asr_pipeline_paml.py -r <rst-file> -c <file with positions to cut> -n <node number> -b <b-factor desired> \n\n"
+        "      Usage: ./asr_pipeline_paml.py -r <rst-file> -a <alignment_length> -n <node_number> -c <file with positions to cut> -b <b-factor desired> \n\n"
         "         -r (--rst_file)        : name of the input file directly from PAML, usually named rst \n"
         "         -n (--node_number)     : node number of the ancestral node that is to be calculated \n"
         "         -a (--alignment_length): length of the input alignment (# of positions) \n"
