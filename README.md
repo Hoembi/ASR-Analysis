@@ -21,6 +21,7 @@ the script asr-pipeline_iqtree.py can be used to process data calculated with th
     - initial tree with internal node numbers (can be extracted from PAML rst file on line 15: ```head -n 15 rst | tail -n 1 >> tree_with_nodes.tree```)
     - length of the full alignment used for PAML calculations (# of positions)
 
+### Script Usage
 2. Run the script to generate full length fasta sequence for the desired node with the following command:
     ```
     ./asr-pipeline_paml.py -r <rst_file>  -n <node_number> -a <alignment_length>
