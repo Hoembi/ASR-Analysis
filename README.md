@@ -25,27 +25,23 @@ the script asr-pipeline_iqtree.py can be used to process data calculated with th
     '''
     ./asr-pipeline_paml.py -r <rst_file>  -n <node_number> -a <alignment_length>
     ```
-    This will generate three files: 1. full length fasta sequence
-                                2. plots with posterior probability per reside as well as histogram of posterior probabilites
-                                3. file with all posterior probabilities, one per line (can be used to plot posterior probabilites
-                                   on structure)
+    This will generate three files:
+    - full length fasta sequence
+    -  plots with posterior probability per reside as well as histogram of posterior probabilites
+    -  file with all posterior probabilities, one per line (can be used to plot posterior probabilites on structure)
 
-3. use the generated full length sequence and determine which areas to cut (based on child and parent cladse).
-   Store positions to cut in the following format:  per line two numbers separated by comma. The left number
-   is included and right number exluded from trim (e.g. 1,50 will cut residue 1 through 49)
+3. use the generated full length sequence and determine which areas to cut (based on child and parent cladse). Store positions to cut in the following format:  per line two numbers separated by comma. The left number is included and right number exluded from trim (e.g. 1,50 will cut residue 1 through 49)
 
 4. re-run script, this time specifying the file with the positions to be trimmed:
     ```
     ./asr-pipeline_paml.py -r <rst_file>  -n <node_number> -a <alignment_length> -c <file_with_pos_to_cut>
     ```
-+     This will generate six files: 1. full length fasta sequence
-+     ┆   ┆   ┆   ┆   ┆   ┆   ┆     2. plots with posterior probability per reside as well as histogram of posterior probabilites for full length
-+     ┆   ┆   ┆   ┆   ┆   ┆   ┆     3. file with all posterior probabilities, one per line (can be used to plot posterior probabilites
-+     ┆   ┆   ┆   ┆   ┆   ┆   ┆   ┆    on structure) for full length
-                                    4. trimmed fasta sequence
-                                    5. plost with posterior probability per residue as well as histogram of posterior probabilities for trimmed sequence
-                                    6. file with all posterior probabilities, one per line (can be used to plot posterior probabilites
-                                       on structure) for full length
+    This will generate six files:
+    - full length fasta sequence
+    - the trimmed fasta sequence
+    - plots with posterior probability per reside as well as histogram of posterior probabilites for full length
+    - file with all posterior probabilities, one per line (can be used to plot posterior probabilites on structure) for full length trimmed fasta sequence
+    - plots with posterior probability per residue as well as histogram of posterior probabilities for trimmed sequence
+    - file with all posterior probabilities, one per line (can be used to plot posterior probabilites on structure) for trimmed sequence
 
 The pdf files with plots will be named according to node as well as average posterior probability, rounded to two decimals.
-
