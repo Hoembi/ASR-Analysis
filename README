@@ -1,0 +1,15 @@
+This repository contains scripts regularly used for ancestral sequence ressurection.
+
+PAML-DATA:
+the script 'asr-pipeline_paml.py' can be used to process data calculated with PAML's codeml(1).
+
+IQTREE-DATA:
+the script asr-pipeline_iqtree.py can be used to process data calculated with the IQTREE(2) program
+
+
+
+(1):Ziheng Yang; PAML 4: Phylogenetic Analysis by Maximum Likelihood, Molecular Biology and Evolution,
+    Volume 24, Issue 8, 1 August 2007, Pages 1586–1591, https://doi.org/10.1093/molbev/msm088
+(2):L.-T. Nguyen, H.A. Schmidt, A. von Haeseler, B.Q. Minh (2015) IQ-TREE: A fast and effective
+    stochastic algorithm for estimating maximum likelihood phylogenies.. Mol. Biol. Evol., 32:268-274.
+    https://doi.org/10.1093/molbev/msu300
