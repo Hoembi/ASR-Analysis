@@ -1,4 +1,4 @@
-This repository contains scripts regularly used for ancestral sequence ressurection.
+This repository contains scripts regularly used for ancestral sequence resurrection.
 
 PAML-DATA:
 the script 'asr-pipeline_paml.py' can be used to process data calculated with PAML's codeml(1).
@@ -13,7 +13,7 @@ the script asr-pipeline_iqtree.py can be used to process data calculated with th
     https://doi.org/10.1093/molbev/msu300
 
 
-#Detailled instructions on script usage
+# Detailled instructions on script usage
 ### PAML-DATASET
 
 #### Preparation
