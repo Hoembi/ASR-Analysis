@@ -86,10 +86,10 @@ def read_data(rst_file, cut_file, node_number, alignment_length):
                 second.append(int(a[1]))
             exclusions = list(zip(first, second))
             to_remove = []
-            for i in range(len(exclusions)):
+            for i in range(len(exclusions)-1):
                 a = exclusions[i][0]
                 b = exclusions[i][1]
-                to_remove = to_remove + list(range(a, b))
+                to_remove = to_remove + list(range(a, b+1))
     else:
         to_remove = None
 
@@ -98,7 +98,7 @@ def read_data(rst_file, cut_file, node_number, alignment_length):
 
 def generate_fastas(input_data, to_remove, node_number):
     """
-    Generates both full lenght and trimmed fasta files
+    Generates full length, trimmed  and aligned fasta files
     """
     fasta = ""
     for i, row in input_data.iterrows():
@@ -110,15 +110,19 @@ def generate_fastas(input_data, to_remove, node_number):
 
     if to_remove != None:
         fasta2 = ""
+        fasta3= ""
         for i, row in input_data.iterrows():
             if i not in to_remove:
                 fasta2 = fasta2 + row.idxmax(0)
+                fasta3 = fasta3 + row.idxmax(0)
             else:
-                pass
+                fasta3 = fasta3 + '-'
         with open("ANC-N" + str(node_number) + "_trimmed.fas", "w") as outfile:
             outfile.write(">ANC-N" + str(node_number) + "\n")
             outfile.write(fasta2)
-
+        with open("ANC-N" + str(node_number) + "_aligned.fas", "w") as outfile:
+            outfile.write(">ANC-N" + str(node_number) + "\n")
+            outfile.write(fasta3)
 
 def calc_statistics(input_data, to_remove, node_number):
     """
@@ -247,8 +251,7 @@ def main():
         "         -r (--rst_file)        : name of the input file directly from PAML, usually named rst \n"
         "         -n (--node_number)     : node number of the ancestral node that is to be calculated \n"
         "         -a (--alignment_length): length of the input alignment (# of positions) \n"
-        "         -c (--cut_file)        : [OPTIONAL] file that define positions to trim. Format:  per line two numbers separated by comma. \n"
-        "                                  The left number is included and right number exluded from trim (e.g. 1,50 will cut residue 1 through 49)\n"
+        "         -c (--cut_file)        : [OPTIONAL] Positions to trim. Format:  two numbers per line, separated by comma to defining the stretch that is trimmed. \n"
         "         -b (--bfactor)         : [OPTIONAL] write PP into B-factor file for plotting on the structure (yes or no; Default: yes) \n"
     )
 
