@@ -30,7 +30,7 @@ the script asr-pipeline_iqtree.py can be used to process data calculated with th
     -  plots with posterior probability per reside as well as histogram of posterior probabilites
     -  file with all posterior probabilities, one per line (can be used to plot posterior probabilites on structure)
 
-3. Use the generated full length sequence and determine which areas to cut (based on child and parent cladse). Store positions to cut in the following format:  per line two numbers separated by comma defining the stretch to be trimmed (e.g. 1,20 will cut residues from 1 to 20 and the resulting sequence will start at residue 21)
+3. Use the generated full length sequence and determine which areas to cut (based on child and parent cladse). Store positions to cut in the following format:  per line two numbers separated by comma defining the stretch to be trimmed (e.g. 1,20 will cut residues from 1 to 20 and the resulting sequence will start at residue 21, if only one position is to be cut define it as follows: 1,1 --> position 1 will be cut and trimmed sequence starts at 2)
 
 4. Re-run script, this time specifying the file with the positions to be trimmed:
     ```

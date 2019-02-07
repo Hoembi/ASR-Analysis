@@ -86,10 +86,10 @@ def read_data(rst_file, cut_file, node_number, alignment_length):
                 second.append(int(a[1]))
             exclusions = list(zip(first, second))
             to_remove = []
-            for i in range(len(exclusions)-1):
+            for i in range(len(exclusions) - 1):
                 a = exclusions[i][0]
                 b = exclusions[i][1]
-                to_remove = to_remove + list(range(a, b+1))
+                to_remove = to_remove + list(range(a, b + 1))
     else:
         to_remove = None
 
@@ -110,19 +110,20 @@ def generate_fastas(input_data, to_remove, node_number):
 
     if to_remove != None:
         fasta2 = ""
-        fasta3= ""
+        fasta3 = ""
         for i, row in input_data.iterrows():
             if i not in to_remove:
                 fasta2 = fasta2 + row.idxmax(0)
                 fasta3 = fasta3 + row.idxmax(0)
             else:
-                fasta3 = fasta3 + '-'
+                fasta3 = fasta3 + "-"
         with open("ANC-N" + str(node_number) + "_trimmed.fas", "w") as outfile:
             outfile.write(">ANC-N" + str(node_number) + "\n")
             outfile.write(fasta2)
         with open("ANC-N" + str(node_number) + "_aligned.fas", "w") as outfile:
             outfile.write(">ANC-N" + str(node_number) + "\n")
             outfile.write(fasta3)
+
 
 def calc_statistics(input_data, to_remove, node_number):
     """
@@ -235,6 +236,18 @@ def execute_pipeline(rst_file, cut_file, node_number, length, bfactor):
     plot_statistics(full_pp, cut_pp, node_number)
     if bfactor == "yes":
         color_bfactor(cut_pp, full_pp, node_number)
+    organize_folders(node_number)
+
+def organize_folders(node_number):
+    import os
+    import shutil
+
+    if not os.path.exists("ANC-N{0}".format(node_number)):
+        os.makedirs("ANC-N{0}".format(node_number))
+    files = os.listdir()
+    for file in files:
+        if "ANC-N{0}_".format(node_number) in file:
+            shutil.move(file, "ANC-N{0}/{1}".format(node_number, file))
 
 
 def main():
